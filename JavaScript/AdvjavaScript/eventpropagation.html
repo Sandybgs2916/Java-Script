@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Propagation</title>
+    <style>
+        .parentDiv {
+            height: 440px;
+            width: 320px;
+            background-color: aqua;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .childDiv {
+            height: 320px;
+            width: 240px;
+            background-color: black;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parentDiv" id="parentId">
+        <div class="childDiv" id="childId"></div>
+    </div>
+    <script>
+        const parentId = document.getElementById('parentId');
+        const childId = document.getElementById('childId');
+
+        const parentCall = () => {
+            alert('Parent Div Call');
+        }
+
+        const childCall = () => {
+            alert('Child Div Call');
+            //event.stopPropagation(); //used to stop event call
+        }
+
+        parentId.addEventListener('click', parentCall); // here bubbling phase work i.e first event call childcall function
+        childId.addEventListener('click', childCall);   // then event call parentcall function
+
+        // parentId.addEventListener('click', parentCall, true); if we use true then capturing phase will work
+        // childId.addEventListener('click', childCall, true);   i.e first event call parentcall function then childcall function
+    </script>
+</body>
+
+</html>  

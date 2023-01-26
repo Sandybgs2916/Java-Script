@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-div">
+        <div>
+            <p>A function is triggered when the user is pressing a key in the input field
+            </p>
+            <br>
+            <input type="text" onkeypress="keyPress()" onkeydown="keyDown()" onkeyup="keyUp()" >
+            <br/>
+            <p id="keys"></p>
+        </div>
+    </div>
+    <script>
+        const keyPress = () => {
+            document.getElementById('keys').innerHTML = `you press ${event.key} and it's code is ${event.code}`;
+            // onkeypress() method identify the key or code we press
+        }
+
+        const keyDown = () => {
+            document.getElementById('keys').innerHTML = `key is Down`;
+            // when we keep clicking key while blackslash it will run.
+        }
+
+        const keyUp = () => {
+            document.getElementById('keys').innerHTML = `key is up`;
+            // when we left key after clicking it will run
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-menu">
+        <div>
+            <p>Click "Try it". Wait 2 seconds. </p>
+            <p>Click "Stop" to prevent </p>
+
+            <button onclick="myVar = setTimeout(myFunction, 2000)"> Try </button>
+            <button onclick="clearTimeout(myVar)">Stop it</button>" 
+            <!-- if we click "stop it " after passing timeout this will cancel timeout method and if we don't click on "stop it" then after 2sec alert will show "hello"-->
+        </div>
+    </div>
+    <script>
+        function myFunction() {
+            alert("Hello");
+        }
+        </script>
+</body>
+</html>

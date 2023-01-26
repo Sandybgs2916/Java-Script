@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main-div">
+        <div id="box"></div>
+    </div>
+    <p id="myP" onmousedown="mouseDown()" onmouseup="mouseUp()">
+        Click the text! The mouseDown() function is triggered when the mouse button is pressed down over this paragraph, and sets the color of the text to red.
+        The mouseUp() functionis triggered when the mouse button is released, and sets
+        the color of the text to black.
+    </p>
+    <script>
+        function mouseDown() {
+            document.getElementById("myP").style.color = "red";
+        }
+
+        function mouseUp() {
+            document.getElementById("myP").style.color = "black";
+        }
+
+        const mEnter = document.getElementById('box');
+        mEnter.addEventListener('mouseenter', () => {
+            mEnter.style.backgroundColor = 'red';
+            console.log('Mouse Enter Bro');
+        });
+        // when we enter mouse in the box, then box color will be red 
+
+        mEnter.addEventListener('mouseleave', () => {
+            console.log('Mouse leave Bro');
+            mEnter.style.backgroundColor = 'pink';
+        });
+        // when we remove mouse from the box, then box color will be pink
+    </script>
+</body>
+
+</html>

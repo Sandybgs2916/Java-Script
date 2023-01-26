@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body>
+    <div class="content">
+        <h1>Different Events Types In JavaScript </h1>
+        <div class="button_container">
+            <div class="button_su">
+                <span class="su_button_circle"></span>
+                <a href="#" class="button_su_inner" onclick="alert('I am awesome')">
+                    <span class="button_text_container">
+                        simple Inline alert()
+                    </span>
+                </a>
+            </div>
+            <div class="button_su">
+                <span class="su_button_circle"></span>
+                <a href="#" class="button_su_inner" onclick="callingFunction()">
+                    <span class="button_text_container">
+                        By calling a Function
+                    </span>
+                </a>
+            </div>
+            <div class="button_su">
+                <span class="su_button_circle"></span>
+                <a href="#" class="button_su_inner">
+                    <span class="button_text_container" id="thirdWay">
+                        Inline event
+                    </span>
+                </a>
+            </div>
+            <div class="button_su">
+                <span class="su_button_circle"></span>
+                <a href="#" class="button_su_inner" id="fourtWay">
+                    <span class="button_text_container">
+                        Event Listeners
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 2nd way of writing event call
+        const callingFunction = () => {
+            alert('most common way of writing functions');
+        }
+
+        // 3rd way of writing function
+        const thirdway = document.getElementById('thirdWay'); /* taking reference */
+        thirdWay.onclick = function(){
+            alert('most common way of writing functions again');    
+        }
+
+        // 4th way of writing function
+        const fourtWay = document.querySelector('#fourtWay')
+        fourtWay.addEventListener('click', () => {
+            alert('I know who are you'); /* this will execute first */
+        })
+        fourtWay.addEventListener('click', () => {
+            console.log('I know who are you'); /* after clicking ok it'll display in console */
+        })
+    </script>
+</body>
+</html> 

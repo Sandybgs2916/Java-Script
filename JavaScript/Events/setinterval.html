@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-menu">
+        <div>
+            <p>can u stop me at 5</p>
+            <br>
+            <button id="btn"> Click here </button>
+        </div>
+    </div>
+    <script>
+        const stopNum = document.querySelector('p');
+        const btn = document.querySelector('#btn');
+        let num = 0;
+        const showMyNum = () => {
+            stopNum.innerHTML = "Loading..." // 
+
+            setInterval(() => {
+                stopNum.innerHTML = `${num}`;
+                num++; // now num is keep updating after 1 sec as countdown nd we can't stop 
+            }, 1000) // 1000 is milliseconds
+        }
+        btn.addEventListener('click', showMyNum); // when we click on btn
+    </script>
+</body>
+</html>

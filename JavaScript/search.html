@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="para">Plz like the video</p>
+    <p class="para">Plz Share the video</p>
+    <p>Subscribe the channel</p>
+    <h1 id="heading">changed the content</h1>
+
+    <button onclick="changeContent()">click Me</button>
+
+    <script>
+        const changeContent = () => {
+            document.getElementById('heading').innerHTML = "Welcome Dear";
+            // while accessing id we will use Element i.e s will not be present at end as id is unique value
+
+            console.log(document.getElementsByClassName('para')); // using it in inspect console we can find total number of
+            // class having name para when we click on "click Me" button.
+            // while accessing class we will use Elements i.e 's' at last as class name is not unique.
+            console.log(document.getElementsByTagName('p')); // this will returns all elements starting with "p"
+
+            // querySelector returns the first matching value whereas
+            // querySelectorAll() will return all the elements
+
+            // document.querySelector('#heading').innerHTML = "Hello Dear";
+            // here when we click on "click me" button our heading will be change to "Hello Dear"
+
+            document.querySelector('.para').innerHTML = "Hello Dear"; // this will change only first para class from
+            // "PLz like the video" to "Hello Dear"
+
+            console.log(document.querySelectorAll('.para'));  // using it we will get all data of class having name "para"
+
+            // in querySelector and querySelectorAll we can access both 'id' and 'class' for the access of id we will use '#'
+            // for the access of class we will use '.'
+            document.getElementsByTagName('p').innerHTML = screen.height; // this will give height of content we are tracking
+        }
+    </script>  
+    
+</body>
+</html>
+
+<!-- here when we open live server and click on "click me" button then our heading will be changed to "Welcome Dear" -->
